@@ -1,0 +1,12 @@
+on: [pull_request_review]
+
+jobs:
+  release_gk_job:
+    runs-on: ubuntu-latest
+    name: Release Gatekeeper Check
+    steps:
+    - name: Check release GK approves
+      id: check
+      uses: DanielFulop/actions-playground@v1
+      with:
+        github-token: ${{ secrets.PERSONAL_TOKEN }}
